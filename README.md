@@ -1,7 +1,10 @@
 # JobFitPro - AI-Powered Hiring Assistant 🚀
 
-![Demo Screenshot](image.png) <!-- Add a screenshot later -->
-()
+![Demo Screenshot 1](image.png) <!-- Add a screenshot later -->
+![Demo Screenshot 2](image1.png)
+![Demo Screenshot 3](image2.png)
+![Demo Screenshot 4](image3.png)
+![Demo Screenshot 5](image4.png)
 
 ## Features ✨
 
