@@ -139,7 +139,7 @@ class ResumeAnalysisAgent:
         
         for skill in self.analysis_result.get("missing_skills", []):
             # Initialize Groq with the free model (adjust model name if needed)
-            llm = ChatGroq(model_name="llama-3.1-8b-instant", api_key=self.api_key)
+            llm = ChatGroq(model_name="llama-3.3-70b-versatile", api_key=self.api_key)
             
             # Construct the prompt for skill analysis
             prompt = f"""
@@ -207,7 +207,7 @@ class ResumeAnalysisAgent:
     def extract_skills_from_jd(self, jd_text):
         """Extract skills from a job description using Groq API"""
         try:
-            llm = ChatGroq(model_name="llama-3.1-8b-instant", api_key=self.api_key)
+            llm = ChatGroq(model_name="llama-3.3-70b-versatile", api_key=self.api_key)
             prompt = f"""
             Extract a comprehensive list of technical skills, technologies, and competencies required from this job description. 
             Format the output as a Python list of strings. Only include the list, nothing else.
@@ -258,7 +258,7 @@ class ResumeAnalysisAgent:
         retriever = vectorstore.as_retriever()
         
         # Use Groq's Chat model
-        llm = ChatGroq(model_name="llama-3.1-8b-instant", api_key=self.api_key)
+        llm = ChatGroq(model_name="llama-3.3-70b-versatile", api_key=self.api_key)
         qa_chain = RetrievalQA.from_chain_type(
             llm=llm,
             retriever=retriever,
@@ -352,7 +352,7 @@ class ResumeAnalysisAgent:
             
             # Use Groq's model for QA with the retriever
             qa_chain = RetrievalQA.from_chain_type(
-                llm=ChatGroq(model_name="llama-3.1-8b-instant", api_key=self.api_key),  # Updated to use Groq
+                llm=ChatGroq(model_name="llama-3.3-70b-versatile", api_key=self.api_key),  # Updated to use Groq
                 chain_type="stuff",  # Using "stuff" chain type
                 retriever=retriever,
                 return_source_documents=False,
@@ -371,7 +371,7 @@ class ResumeAnalysisAgent:
             return []
         
         try:
-            llm = ChatGroq(model="llama-3.1-8b-instant", api_key=self.api_key)  # Updated to use Groq
+            llm = ChatGroq(model="llama-3.3-70b-versatile", api_key=self.api_key)  # Updated to use Groq
             
             context = f"""
             Resume Content:
@@ -490,7 +490,7 @@ class ResumeAnalysisAgent:
             
             if remaining_areas:
                 try:
-                    llm = ChatGroq(model="llama-3.1-8b-instant", api_key=self.api_key)
+                    llm = ChatGroq(model="llama-3.3-70b-versatile", api_key=self.api_key)
                     
                     # Safely build weaknesses_text
                     weaknesses_text = ""
@@ -654,7 +654,7 @@ class ResumeAnalysisAgent:
                         improvement_examples += f"For {skill_name}: {weakness['example']}\n\n"
             
             # Use Groq for generating the improved resume
-            llm = ChatGroq(model="llama-3.1-8b-instant", api_key=self.api_key)  # Updated to Groq
+            llm = ChatGroq(model="llama-3.3-70b-versatile", api_key=self.api_key)  # Updated to Groq
             
             jd_context = ""
             if self.jd_text:
